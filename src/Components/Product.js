@@ -17,7 +17,7 @@ img{
 const Product = () => {
    return(
        <Div>
-           <img src="./images/unnamed.jpg"/>
+           <img alt="lapiz" src="./images/unnamed.jpg"/>
            <div>
                <h2>Lapiz ecologico</h2>
                <span>$3000</span>

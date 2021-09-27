@@ -37,7 +37,7 @@ button{
 const Overlay = () => {
    return(
        <Div>
-           <img src="./images/lapiz.jpg"/>
+           <img alt="lapices" src="./images/lapiz.jpg"/>
            <div>
                <h1>Lapices ecologicos</h1>
                 <button>VER</button>
