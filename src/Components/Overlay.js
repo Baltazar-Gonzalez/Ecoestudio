@@ -12,6 +12,7 @@ img{
 }   
 div{
     position: absolute;
+    height:175px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -27,7 +28,6 @@ button{
     height: 30px;
     color: white;
     background-color: rgb(5, 50, 50);
-    box-shadow: none;
     border: none;
     outline: none;
 }

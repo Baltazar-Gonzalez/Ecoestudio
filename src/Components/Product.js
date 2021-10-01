@@ -1,28 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Modal from "./Modal"
 import styled from 'styled-components'
- 
+
 const Div = styled.div`
     height: 200px;
     display: flex;
     align-items: center;
     background-color: #111;
+    border-top: 1px solid #444;
     color: #eee;
 img{
-    width: 50%;
-    height: 50%;
-    object-fit: scale-down;
+    width: 45%;
+    height: 60%;
+    padding: 12px;
 }
 `
- 
-const Product = () => {
+
+const Product = props => {
+    const [isOpen, setOpen] = useState(false)
+    const handleOpen = () =>{
+        setOpen(true)
+        console.log(isOpen)
+    }
+    const handleClose = () =>{
+        setOpen(false)
+        console.log(isOpen)
+    }
+
    return(
-       <Div>
-           <img alt="lapiz" src="./images/unnamed.jpg"/>
-           <div>
-               <h2>Lapiz ecologico</h2>
-               <span>$3000</span>
-           </div>
-       </Div>
+       <>
+        <Div onClick={handleOpen}>
+            {props.children}
+        </Div>
+        <Modal isOpen={isOpen} onClose={handleClose}>
+            {props.children}
+        </Modal>
+    </>
    )
 }
  
