@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
+import {useDispatch, useSelector} from "react-redux"
+import {addCart} from "../actions"
 import ReactDOM from "react-dom"
 import styled from 'styled-components'
+import QuantityButton from "./QuantityButton"
 
 
 const Div = styled.div`
@@ -48,24 +51,7 @@ const Div = styled.div`
     border: none;
     outline: none;
   }
-  .Amount__button{
-    margin: 10px 0;
-      color: white;
-      background-color: black;
-      border: 1px solid #222;
-      outline: none;
-      width: 30px;
-      height: 30px;
-      font-size: 1.5em;
-  }
-  .Modal__Amount{
-      height: 30px;
-      width: 60px;
-      border: 1px solid #222;
-      font-size: 1.5em;
-      outline: none;
-      text-align: center;
-  }
+  
   img{
       width: 80%;
       height: 220px;
@@ -77,16 +63,19 @@ const Div = styled.div`
 
  
 const Component = props => {
-const [amount, setAmount] = useState(0)
 
-const handleIncrement = () => {
-    if(amount === 99) setAmount(0)
-    else setAmount(amount+1)
-} 
-const handleDecrement = () => {
-    if(amount === 0) setAmount(99)
-    else setAmount(amount-1)
-}
+const lol = useSelector(state=>state.productos)
+const state = lol[props.id-1]
+
+const dispatch = useDispatch()
+
+const handleBuy = e => {
+    if(e===Number()){
+        for(var i=0; i<=e; i++){
+            dispatch(addCart({...state}))
+        }}else{
+        dispatch(addCart({...state}))
+}}
 
     if(!props.isOpen){
         return null
@@ -97,14 +86,14 @@ const handleDecrement = () => {
             <div className="Modal">
                 <div className="Modal__container">
                     <button onClick={props.onClose} className="Modal__close-button">X</button>
-                    {props.children}
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata"</p>
-                    <div>
-                        <button className="Amount__button" onClick={handleDecrement}>-</button>
-                        <input value={amount} type="number" className="Modal__Amount"/>
-                        <button className="Amount__button" onClick={handleIncrement}>+</button>
+                    <img alt={state.nombre} src={state.img}/>
+                    <div >
+                        <h2>{state.nombre}</h2>
+                        <span>${state.precio}</span>
                     </div>
-                    <button className="Modal__buy-button">Agregar al carrito</button>
+                        <p>{state.descripcion}</p>
+                    <QuantityButton onChange={handleBuy}/>
+                    <button onClick={handleBuy} className="Modal__buy-button">Agregar al carrito</button>
                 </div>
             </div>
         </Div>,

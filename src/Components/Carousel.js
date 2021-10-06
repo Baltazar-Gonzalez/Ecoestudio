@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from "react-redux"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import styled from 'styled-components'
@@ -35,30 +36,21 @@ button{
 `
 
 const DemoCarousel = () =>{
+const state = useSelector(state => state.carousel)
         return (
           <Div>       
             <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
-                <div>
-                <img alt="lapices" src="./images/lapiz.jpg"/>
-           <div className="Carousel__content">
-               <h1>Lapices ecologicos</h1>
-                <button>VER</button>
-           </div>
-                </div>
-                <div>
-                <img alt="lapices" src="./images/lapiz.jpg"/>
-           <div className="Carousel__content">
-               <h1>Lapices ecologicos</h1>
-                <button>VER</button>
-           </div>
-                </div>
-                <div >
-                <img alt="lapices" src="./images/lapiz.jpg"/>
-           <div className="Carousel__content">
-               <h1>Lapices ecologicos</h1>
-                <button>VER</button>
-           </div>
-                </div>
+                {state.map(seccion => { 
+                return(
+                   <div>
+                       <img alt={seccion.id} src={seccion.img}/>
+                       <div className="Carousel__content">
+                          <h1>{seccion.titulo}</h1>
+                          <button>{seccion.boton}</button>
+                        </div>
+                     </div>   
+                    )
+                })}
             </Carousel>
           </Div>
         );

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useSelector} from "react-redux"
 import Modal from "./Modal"
 import styled from 'styled-components'
 
@@ -17,24 +18,27 @@ img{
 `
 
 const Product = props => {
+    const lol = useSelector(state => state.productos)
+    const state = lol[props.id-1]
+
     const [isOpen, setOpen] = useState(false)
     const handleOpen = () =>{
         setOpen(true)
-        console.log(isOpen)
     }
     const handleClose = () =>{
         setOpen(false)
-        console.log(isOpen)
     }
 
    return(
        <>
         <Div onClick={handleOpen}>
-            {props.children}
+            <img alt={state.nombre} src={state.img}/>
+                <div >
+                    <h2>{state.nombre}</h2>
+                    <span>${state.precio}</span>
+                </div>
         </Div>
-        <Modal isOpen={isOpen} onClose={handleClose}>
-            {props.children}
-        </Modal>
+        <Modal id={props.id} isOpen={isOpen} onClose={handleClose}/>
     </>
    )
 }
