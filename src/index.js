@@ -1,27 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './routes/App';
 import {Provider} from "react-redux"
 import { createStore, compose } from "redux"
 import reducer from "./reducers"
+import "./index.css"
 
 const initialState = {
   "carrito":[],
   "carousel":[
     {
-      "id": 1,
+      "id": 0,
       "titulo": "Lapiz ecologico",
       "boton": "VER OFERTAS",
       "img":"./images/lapiz.jpg",
     }, 
     {
-      "id": 2,
+      "id": 1,
       "titulo": "Concurso",
       "boton": "COMO PARTICIPAR?",
       "img":"./images/lapiz.jpg",
     },
     {
-      "id": 3,
+      "id": 2,
       "titulo": "USTEDES",
       "boton": "VER",
       "img":"./images/lapiz.jpg",
@@ -29,21 +30,24 @@ const initialState = {
   ],
   "productos":[
     {
-      "id": 1,
+      "id": 0,
+      "cantidad": 1,
       "nombre": "Lapiz ecologico",
       "precio": 100,
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",
       "img":"./images/unnamed.jpg",
     },
     {
-      "id": 2,
+      "id": 1,
+      "cantidad": 1,
       "nombre": "Posticks reciclados",
       "precio": 150,
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",
       "img":"./images/posticks.jpg",
     },
     {
-      "id": 3,
+      "id": 2,
+      "cantidad": 1,
       "nombre": "Lapicera ecologica",
       "precio": 250,
       "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",

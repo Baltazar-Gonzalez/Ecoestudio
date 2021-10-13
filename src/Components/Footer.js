@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavHashLink } from 'react-router-hash-link';
  
 const Div = styled.div`
     z-index: 20;
@@ -21,6 +22,7 @@ const Div = styled.div`
 }
 span{
     bottom: 0;
+
 }
 `
 const More = styled.div`
@@ -68,6 +70,13 @@ li {
 `
 
 const Footer = () => {
+
+const scrollWithOffset = (el) => {
+        const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+        const yOffset = -50; 
+        window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+    }
+
    return(
        <Div>
         <ul>
@@ -81,9 +90,9 @@ const Footer = () => {
             </Option>
             <Info >
             <ul id="moreInfo">
-                <li>Compras</li>
-                <li>Envios</li>
-                <li>Metodos de pago</li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#compras" >Compras</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#envios">Envios</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#pagos">Metodos de pago</NavHashLink></li>
             </ul>
             </Info>
             </li>
@@ -97,9 +106,9 @@ const Footer = () => {
             </Option>
             <Info >
             <ul id="moreInfo2">
-                <li>Nosotros</li>
-                <li>Metas</li>
-                <li>Personal</li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#nosotros">Nosotros</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#metas">Metas</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#personal">Personal</NavHashLink></li>
             </ul>
             </Info>
             </li>
@@ -113,16 +122,16 @@ const Footer = () => {
             </Option>
             <Info>
             <ul id="moreInfo3">
-                <li>Gmail</li>
-                <li>Whatsapp</li>
-                <li>Dirección</li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#gmail">Gmail</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#whatsapp">Whatsapp</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#direccion">Dirección</NavHashLink></li>
             </ul>
             </Info>
             </li>
         </ul>
       
         <span>
-            © 2021 Eco Estudio S.A - Todos los derechos reservados. 
+            © 2021 Eco Estudio S.R.L - Todos los derechos reservados. 
         </span>
        </Div>
    )

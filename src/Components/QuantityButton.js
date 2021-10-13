@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import {useDispatch, useSelector} from "react-redux"
+import { quantityCart} from "../actions"
  
 const Div = styled.div`
  .Amount__button{
@@ -24,23 +26,23 @@ const Div = styled.div`
  
 const QuantityButton = props => {
 
-const [amount, setAmount] = useState(1)
+const state = useSelector(state => state.productos[props.id])
+
+const dispatch = useDispatch()
 
 const handleIncrement = () => {
-    if(amount === 99) setAmount(1)
-    else setAmount(amount+1)
-    props.onChange(amount)
+    if(props.quantity === 99) dispatch(quantityCart({...state, cantidad:1}))
+    else dispatch(quantityCart({...state, cantidad:props.quantity+1}))
 } 
 const handleDecrement = () => {
-    if(amount === 1) setAmount(99)
-    else setAmount(amount-1)
-    props.onChange(amount)
+    if(props.quantity === 1) dispatch(quantityCart({...state, cantidad:99}))
+    else dispatch(quantityCart({...state, cantidad:props.quantity-1}))
 }
 
 return(
         <Div>
             <button className="Amount__button" onClick={handleDecrement}>-</button>
-            <input value={amount} type="number" className="Modal__Amount"/>
+            <input value={props.quantity} type="number" className="Modal__Amount"/>
             <button className="Amount__button" onClick={handleIncrement}>+</button>
         </Div>
    )

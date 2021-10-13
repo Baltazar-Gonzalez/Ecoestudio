@@ -38,7 +38,7 @@ button{
 const DemoCarousel = () =>{
 const state = useSelector(state => state.carousel)
         return (
-          <Div>       
+          <Div >       
             <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
                 {state.map(seccion => { 
                 return(

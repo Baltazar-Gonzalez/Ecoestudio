@@ -18,8 +18,7 @@ img{
 `
 
 const Product = props => {
-    const lol = useSelector(state => state.productos)
-    const state = lol[props.id-1]
+    const state = useSelector(state => state.productos[props.id])
 
     const [isOpen, setOpen] = useState(false)
     const handleOpen = () =>{

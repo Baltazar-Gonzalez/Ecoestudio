@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from "react-redux"
-import {addCart} from "../actions"
+import {addCart, quantityCart} from "../actions"
 import ReactDOM from "react-dom"
 import styled from 'styled-components'
 import QuantityButton from "./QuantityButton"
@@ -64,17 +64,15 @@ const Div = styled.div`
  
 const Component = props => {
 
-const lol = useSelector(state=>state.productos)
-const state = lol[props.id-1]
+const state = useSelector(state => state.productos[props.id])
+const quantity = state.cantidad
 
 const dispatch = useDispatch()
 
-const handleBuy = e => {
-    if(e===Number()){
-        for(var i=0; i<=e; i++){
-            dispatch(addCart({...state}))
-        }}else{
-        dispatch(addCart({...state}))
+const handleBuy = () => {
+        dispatch(addCart({...state, cantidad: 1})) 
+        for(var i=0; i<=quantity; i++){
+        dispatch(quantityCart({...state, cantidad: quantity}))
 }}
 
     if(!props.isOpen){
@@ -92,7 +90,7 @@ const handleBuy = e => {
                         <span>${state.precio}</span>
                     </div>
                         <p>{state.descripcion}</p>
-                    <QuantityButton onChange={handleBuy}/>
+                    <QuantityButton id={props.id} quantity={quantity}/>
                     <button onClick={handleBuy} className="Modal__buy-button">Agregar al carrito</button>
                 </div>
             </div>

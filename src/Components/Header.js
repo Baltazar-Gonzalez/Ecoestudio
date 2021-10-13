@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import {BiShoppingBag} from "react-icons/bi"
-import {useSelector} from "react-redux"
-//import {addCart} from "../actions"
+import {useSelector, useDispatch} from "react-redux"
+import {deleteCart} from "../actions"
 import QuantityButton from "./QuantityButton"
+import { NavHashLink } from 'react-router-hash-link';
 
 const Div = styled.div`
   position: fixed;
@@ -30,13 +31,13 @@ const Div = styled.div`
 >ul{
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     list-style: none;
     top:0;
     padding: 100px 20px;
     width: 100%;
     height: 100vh;
-    font-family: 'Mo ntserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     background-color: #1b1b1b;
     color: #fff;
@@ -46,14 +47,19 @@ h4{
 }
 h6{
     font-size: .5em;
+    font-family: sans-serif;
     margin: 20px 0 10px 0;
+}
+.empty{
+    font-size: 16px;
+    margin-top: 15px;
 }
 }
 .menu1{
-    left:-400px;
+    left:-100%;
 }
 .menu2{
-    right:-400px;
+    right:-100%;
 }
 
 #socialmedia{
@@ -104,12 +110,12 @@ const Img = styled.div`
     font-family: 'Montserrat', sans-serif;
 `
 const CartProduct = styled.li`
+  position: relative;
   display: flex;
   background-color: #fff;
   color: #111;
   margin: 8px 0;
   font-size: .5em;
-  
   img{
       width: 50%;
       height: 120px;
@@ -118,24 +124,63 @@ const CartProduct = styled.li`
   div{
     padding: 10px 0 0 0;
     font-size: .9em;
-  }
-  
+  } 
 `
+const Button = styled.button`
+    position: absolute;
+    right:  2.5px;
+    bottom: 2.5px;
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+    padding: 0.3em 1em;
+`
+const Buy = styled.div`
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    div{
+        font-size:.7em;
+        display: flex;
+        justify-content: space-between;
+        }
+    button{
+        font-size: .6em;
+        height: 40px;
+        background-color: #fff;
+        border:none;
+        border-radius: 5px;
+    }
+`
+
 const Header = () => {
 
-//const [quantity, setQuantity] = useState(0)    
+const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -50; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
 
-//const dispatch = useDispatch()
+const state = useSelector(state => state)
 
-const state = useSelector(state => state.carrito)
+let total = 0
 
-const handleChange = e => {
-    //setQuantity(e)
-    //dispatch(addCart({...state, cantidad:quantity}))
+state.carrito.forEach(items => {
+    total += items.precio
+})
+
+const dispatch = useDispatch()
+
+const handleRemove = e => {
+    dispatch(deleteCart(state.carrito.filter(items => e === items.id)
+    ))
 }
     
-
-
    return(
        <Div>
             <Menu id="icon" onClick={()=>{
@@ -158,15 +203,15 @@ const handleChange = e => {
                         </ul>
                     </li>
                 </ul>
-            <Img>Ecoestudio</Img>
+                <NavHashLink scroll={el => scrollWithOffset(el)} to="/#top"><Img>Ecoestudio</Img></NavHashLink>
             <BiShoppingBag color="white" size="25px" onClick={ ()=>{
             document.getElementById("icon").classList.toggle("x")
             document.getElementById("menu2").classList.toggle("open2")
             }}/>
             <ul className="menu2" id="menu2">
                 <h4>Carrito de Compras</h4>
-                <h6>Items({state.length})</h6>
-                {state.map(compras => {
+                <h6>Items({state.carrito.length})</h6>
+                {state.carrito.map(compras => {
                     return(
                       <CartProduct>
                           <img alt={compras.name} src={compras.img}/>
@@ -174,11 +219,21 @@ const handleChange = e => {
                             <span>{compras.nombre} ({compras.cantidad})</span>
                             <br/>
                             <span>${compras.precio}</span>
-                            <QuantityButton onChange={handleChange}/>
+                            <QuantityButton quantity={compras.cantidad} id={compras.id}/>
+                            <Button onClick={()=>handleRemove(compras.id)}>X</Button>
                           </div>
                       </CartProduct>
                     )
                 })}
+                {state.carrito.length>0?
+                <Buy>
+                    <div>
+                        <p>Total</p>
+                        <span>${total}</span>
+                    </div>
+                    <button>INICIAR COMPRA</button>
+                </Buy>
+                :<p className="empty">El carrito de compras esta vacio...</p>}
             </ul>
        </Div>
    )
