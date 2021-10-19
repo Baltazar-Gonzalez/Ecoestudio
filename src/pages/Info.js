@@ -32,7 +32,7 @@ const List = styled.ul`
 const Info = () => {
    return(
        <Div>
-           <List>
+           <List id="ayuda">
                 <h2>¿NECESITA AYUDA?</h2>
                 <li id="compras">
                     <h4>COMPRAS</h4>
@@ -47,19 +47,19 @@ const Info = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                  </li>
            </List>
-           <List>
+           <List id="empresa">
                 <h2>EMPRESA</h2> 
                 <li id="nosotros">
                     <h4>NOSOTROS</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Somos una empresa que se dedica a la venta de productos de librería amigables con el medio ambiente con el fin de reducir, reciclar y reutilizar cumpliendo con las leyes basicas para la conservación del medio ambiente. Nuestro proyecto surgió a traves del proyecto empresa en el aula, somos de 5°A del colegio José Manuel Estrada y creemos que el reciclaje es necesario en este mundo que está tan insdustrializado para reducir la contaminación.</p>
                  </li>
                  <li id="metas">
                     <h4>METAS</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Ecoestudio se encarga de satisfacer las necesidades de nuestros clientes ofreciendo productos de libreria amigables con el medio ambiente para construir un mundo mas ecofriendly.</p>
                  </li>
                  <li id="personal">
-                    <h4>PERSONAL</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4>VISIÓN</h4>
+                    <p>Ser líder a nivel local ofreciendo los productos ecológicos de mejor calidad complementando el cuidado del medio-ambiente mediante la tecnología.</p>
                  </li>
            </List>
            <List id="contactos">

@@ -40,10 +40,14 @@ const Div = styled.div`
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     background-color: #1b1b1b;
-    color: #fff;
+    color: #fff; 
     transition: all 0.7s ease;
 h4{
     width: 100vh;
+} 
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #fff;
 }
 h6{
     font-size: .5em;
@@ -71,6 +75,7 @@ h6{
     bottom: 30px;
 li{
     margin-right: 10px;
+    color: white;
 }
 }
 .open{
@@ -150,6 +155,7 @@ const Buy = styled.div`
         justify-content: space-between;
         }
     button{
+        width: 100%;
         font-size: .6em;
         height: 40px;
         background-color: #fff;
@@ -164,6 +170,21 @@ const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     const yOffset = -50; 
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+}
+
+const handleClose = () => {
+    if(document.getElementById("menu2").classList.contains("open2")){
+        document.getElementById("menu2").classList.remove("open2")
+    }
+    else{
+    document.getElementById("menu").classList.toggle("open")
+    }
+    document.getElementById("icon").classList.toggle("x")
+}
+
+const handleClose2 = () => {
+    document.getElementById("icon").classList.toggle("x")
+    document.getElementById("menu2").classList.toggle("open2")
 }
 
 const state = useSelector(state => state)
@@ -183,31 +204,20 @@ const handleRemove = e => {
     
    return(
        <Div>
-            <Menu id="icon" onClick={()=>{
-            if(document.getElementById("menu2").classList.contains("open2")){
-                document.getElementById("menu2").classList.remove("open2")
-            }
-            else{
-            document.getElementById("menu").classList.toggle("open")
-            }
-            document.getElementById("icon").classList.toggle("x")
-            }}/>
+            <Menu id="icon" onClick={handleClose}/>
                 <ul className="menu1" id="menu">
-                    <li>Inicio</li>
-                    <li>Productos</li>
-                    <li>Contactanos</li>
+                    <li><NavHashLink scroll={el => scrollWithOffset(el)} onClick={handleClose} to="/#top">Inicio</NavHashLink></li>
+                    <li><NavHashLink scroll={el => scrollWithOffset(el)} onClick={handleClose} to="/#productos">Productos</NavHashLink></li>
+                    <li><NavHashLink scroll={el => scrollWithOffset(el)} onClick={handleClose} to="/info#contactos">Contactanos</NavHashLink></li>
                     <li>
                         <ul id="socialmedia">
-                        <li>INSTAGRAM</li>
-                        <li>FACEBOOK</li> 
+                        <li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/ecoestudio.ok/">INSTAGRAM</a></li>
+                        <li><a href="https://www.facebook.com">FACEBOOK</a></li> 
                         </ul>
                     </li>
                 </ul>
                 <NavHashLink scroll={el => scrollWithOffset(el)} to="/#top"><Img>Ecoestudio</Img></NavHashLink>
-            <BiShoppingBag color="white" size="25px" onClick={ ()=>{
-            document.getElementById("icon").classList.toggle("x")
-            document.getElementById("menu2").classList.toggle("open2")
-            }}/>
+            <BiShoppingBag color="white" size="25px" onClick={handleClose2}/>
             <ul className="menu2" id="menu2">
                 <h4>Carrito de Compras</h4>
                 <h6>Items({state.carrito.length})</h6>
@@ -231,7 +241,7 @@ const handleRemove = e => {
                         <p>Total</p>
                         <span>${total}</span>
                     </div>
-                    <button>INICIAR COMPRA</button>
+                    <NavHashLink scroll={el => scrollWithOffset(el)} onClick={handleClose} to="/checkout#top"><button>INICIAR COMPRA</button></NavHashLink>
                 </Buy>
                 :<p className="empty">El carrito de compras esta vacio...</p>}
             </ul>

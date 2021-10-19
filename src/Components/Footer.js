@@ -22,7 +22,12 @@ const Div = styled.div`
 }
 span{
     bottom: 0;
-
+    margin-top: 20px;
+}
+img{
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
 }
 `
 const More = styled.div`
@@ -62,6 +67,10 @@ li {
     color: #1b1b1b;
     border-bottom: 1px solid rgb(160,160,165);
     padding: .2em;
+}
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #111;
 }
 }
 .open{
@@ -129,7 +138,7 @@ const scrollWithOffset = (el) => {
             </Info>
             </li>
         </ul>
-      
+        <img alt="logo" src="./images/ECO-LOGO-GREY.png"/>
         <span>
             © 2021 Eco Estudio S.R.L - Todos los derechos reservados. 
         </span>
