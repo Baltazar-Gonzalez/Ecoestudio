@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import {useSelector, useDispatch} from "react-redux"
+import {useSelector} from "react-redux"
 
 const Div = styled.div`
     margin-top: 50px;
