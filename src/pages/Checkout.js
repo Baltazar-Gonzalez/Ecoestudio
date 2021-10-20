@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
+import {useSelector, useDispatch} from "react-redux"
+
 const Div = styled.div`
     margin-top: 50px;
     width: 100%;
@@ -40,27 +42,51 @@ button{
 `
  
 const Checkout = () => {
+    const [form, setForm] = useState({
+        Nombre:"",
+        Apellido:"",
+        Grado:"",
+        Numero:0,
+    })
+
+    const state = useSelector(state => state.carrito)
+
+    let total = 0
+    let productos = ""
+    
+    const handleSubmit = e =>{
+        e.preventDefault()
+        console.log(state)
+        state.forEach(items => {
+            total += items.precio
+            if(productos==="") productos += `${items.nombre} (${items.cantidad}) -`
+            else productos += ` ${items.nombre} (${items.cantidad})`
+           
+        })
+        window.open(`https://api.whatsapp.com/send?phone=5491159668953&text=COMPRADOR: ${form.Nombre} ${form.Apellido}%0AGRADO: ${form.Grado} %0APEDIDO: ${productos} %0ATOTAL: $${total}`)
+    }
+    const handleChange = (e, value) =>{
+        console.log(form)
+        setForm({...form,[e]:value})
+    }
+
    return(
        <Div>
            <h2>Datos de contacto</h2>
-           <form>
+           <form onSubmit={handleSubmit}>
                 <div>
-                    <label for="floatingInput">Nombre</label>
-                    <input required type="text" id="floatingInput" placeholder="Nombre"/>
+                    <label for="Nombre">Nombre</label>
+                    <input required type="text" id="Nombre" placeholder="Nombre" onChange={(e)=>{handleChange("Nombre", e.target.value)}}/>
                 </div>
                 <div >
-                    <label for="floatingPassword">Apellido</label>
-                    <input required type="text" id="floatingPassword" placeholder="Apellido"/>
+                    <label for="Apellido">Apellido</label>
+                    <input required type="text" id="Apellido" placeholder="Apellido" onChange={(e)=>{handleChange("Apellido", e.target.value)}}/>
                 </div>
                 <div >
-                    <label for="floatingPassword">Grado y División</label>
-                    <input required type="text" id="floatingPassword" placeholder="(1A-3A-6A-etc)"/>
+                    <label for="Grado">Grado y División</label>
+                    <input required type="text" id="Grado" placeholder="ej: 1A-3A-5A" onChange={(e)=>{handleChange("Grado", e.target.value)}}/>
                 </div>
-                <div>
-                    <label for="floatingPassword">Numero de telefono</label>
-                    <input required type="number" id="floatingPassword" placeholder="ej: +54 9 11 12341234"/>
-                </div>
-                <button type="submit">ENVIAR</button>
+                <button>ENVIAR</button>
             </form> 
        </Div>
    )

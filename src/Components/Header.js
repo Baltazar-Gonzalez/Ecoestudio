@@ -36,7 +36,7 @@ const Div = styled.div`
     top:0;
     padding: 100px 20px;
     width: 100%;
-    height: 100vh;
+    height: 100.1vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     background-color: #1b1b1b;
