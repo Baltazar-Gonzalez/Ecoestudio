@@ -212,7 +212,6 @@ const handleRemove = e => {
                     <li>
                         <ul id="socialmedia">
                         <li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/ecoestudio.ok/">INSTAGRAM</a></li>
-                        <li><a href="https://www.facebook.com">FACEBOOK</a></li> 
                         </ul>
                     </li>
                 </ul>

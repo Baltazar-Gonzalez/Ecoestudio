@@ -36,15 +36,15 @@ const Info = () => {
                 <h2>¿NECESITA AYUDA?</h2>
                 <li id="compras">
                     <h4>COMPRAS</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Para realizar una compra lo primero es seleccionar el producto deseado con sus respectivos detalles (cantidad), luego de revisar el carrito se deben completar los datos y enviar el pedido. Nuestro personal se encargara de recibir la orden y preparla para su retiro en la caja.</p>
                  </li>
                  <li id="envios">
                     <h4>ENVIOS</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Nuestro rango de envios abarca la totalidad del Colegio José Manuel Estrada.</p>
                  </li>
                  <li id="pagos">
                     <h4>METODOS DE PAGO</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Actualmente solo aceptamos pagos en efectivo.</p>
                  </li>
            </List>
            <List id="empresa">
@@ -57,9 +57,14 @@ const Info = () => {
                     <h4>METAS</h4>
                     <p>Ecoestudio se encarga de satisfacer las necesidades de nuestros clientes ofreciendo productos de libreria amigables con el medio ambiente para construir un mundo mas ecofriendly.</p>
                  </li>
-                 <li id="personal">
+                 <li id="vision">
                     <h4>VISIÓN</h4>
                     <p>Ser líder a nivel local ofreciendo los productos ecológicos de mejor calidad complementando el cuidado del medio-ambiente mediante la tecnología.</p>
+                 </li>
+                 <li id="personal">
+                    <h4>PERSONAL</h4>
+                    <p>Nuestro equipo esta compuesto por los alumnos de 5°A, nuestra jerarquia esta explicada en el siguiente organigrama. </p>
+                    <img alt="organigrama" src=""/>
                  </li>
            </List>
            <List id="contactos">
@@ -67,16 +72,16 @@ const Info = () => {
                 <div id="gmail">
                     <li >
                         <h4>GMAIL</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>ecoestudiook@gmail.com</p>
                     </li>
                 </div>
                  <li id="whatsapp">
                     <h4>WHATSAPP</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>+54 9 11 5111-7261</p>
                  </li>
                  <li id="direccion">
                     <h4>DIRECCIÓN</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Buenos Aires, Ituzaingó, 24 de Octubre 569</p>
                  </li>
            </List>
        </Div>

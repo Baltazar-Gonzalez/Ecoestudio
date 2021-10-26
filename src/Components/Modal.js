@@ -57,7 +57,7 @@ const Div = styled.div`
       height: 220px;
   }
   p{
-      text-align: start;
+      text-align: center;
   }
 `
 

@@ -12,8 +12,8 @@ const initialState = {
     {
       "id": 0,
       "titulo": "Lapiz ecologico",
-      "boton": "VER OFERTAS",
-      "img":"./images/lapiz.jpg",
+      "boton": "VER PRODUCTOS",
+      "img":"./images/lapices.jpg",
     }, 
     {
       "id": 1,
@@ -23,9 +23,9 @@ const initialState = {
     },
     {
       "id": 2,
-      "titulo": "USTEDES",
-      "boton": "VER",
-      "img":"./images/lapiz.jpg",
+      "titulo": "NOSOTROS",
+      "boton": "INFO",
+      "img":"./images/nosotros.jpeg",
     }
   ],
   "productos":[
@@ -34,24 +34,24 @@ const initialState = {
       "cantidad": 1,
       "nombre": "Lapiz ecologico",
       "precio": 100,
-      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",
+      "descripcion": "Lapiz hecho con papel de diario reciclado, cuenta con una capsula biodegradable que contiene semillas (Perejil, Puerro, Albaca y Rucula) que te permitira seguir aportando al cuidado del medioambiente.",
       "img":"./images/unnamed.jpg",
     },
     {
       "id": 1,
       "cantidad": 1,
-      "nombre": "Posticks reciclados",
-      "precio": 150,
-      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",
+      "nombre": "Libreta ecologica",
+      "precio": 250,
+      "descripcion": "Libreta realizada con productos ecologicos. Posee una cantidad de ... hojas recicladas y una tapa forrada cuidadosamente con nuestro logo",
       "img":"./images/posticks.jpg",
     },
     {
       "id": 2,
       "cantidad": 1,
-      "nombre": "Lapicera ecologica",
+      "nombre": "Separadores",
       "precio": 250,
-      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata",
-      "img":"./images/lapicera.jpg",
+      "descripcion": "Señalador realizado con cartones reciclados y papel de libros. Poseen diseños unicos que son 100% desgradables",
+      "img":"./images/separadores.jpeg",
     },
   ],
 }

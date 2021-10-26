@@ -117,6 +117,7 @@ const scrollWithOffset = (el) => {
             <ul id="moreInfo2">
                 <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#nosotros">Nosotros</NavHashLink></li>
                 <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#metas">Metas</NavHashLink></li>
+                <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#vision">Visión</NavHashLink></li>
                 <li><NavHashLink scroll={el => scrollWithOffset(el)} to="/info#personal">Personal</NavHashLink></li>
             </ul>
             </Info>

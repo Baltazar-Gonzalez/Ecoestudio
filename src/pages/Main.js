@@ -38,7 +38,7 @@ return(
         <Carousel />
         <Div >
             <h2 className="animate__animated animate__fadeInDown">Bienvenidos a <span>ECOESTUDIO</span></h2>
-            <p className="animate__animated animate__fadeInDown">Tu empresa de productos ecologicos de confianza.</p>
+            <p className="animate__animated animate__fadeInDown">Se parte de la solución y no de la contaminación</p>
         </Div>
         <div className="animate__animated animate__fadeIn" id="productos">
         {state.map(producto=>{
