@@ -29,6 +29,29 @@ const Div = styled.div`
       color: #06ff36;
   }
 `
+const Productos = styled.div`
+    h1{
+        color: #fff;
+        padding: 40px;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+        border-top: 1px solid #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+@media screen and (min-width: 800px){
+    >div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:row;
+        flex-wrap: wrap;
+        padding: 0 0 20px 0 ;
+     }
+     h1{
+         border: none;
+     }
+    }
+`
 
 const Main = () => {
 const state = useSelector(state => state.productos)
@@ -40,13 +63,21 @@ return(
             <h2 className="animate__animated animate__fadeInDown">Bienvenidos a <span>ECOESTUDIO</span></h2>
             <p className="animate__animated animate__fadeInDown">Se parte de la solución y no de la contaminación</p>
         </Div>
-        <div className="animate__animated animate__fadeIn" id="productos">
-        {state.map(producto=>{
-            return(
-                <Product id={producto.id}/>
-                )
-            })}
+        <Productos className="animate__animated animate__fadeIn" id="productos">
+            <h1>PRODUCTOS</h1>
+            <div>
+                {state.map(producto=>{
+                    if(producto.id>2) return false
+                    return(
+                        <Product id={producto.id}/>
+                        )
+                    })}
             </div>
+            <h1>OFERTAS</h1>
+            <div>
+                <Product id={3}/>
+            </div>
+        </Productos>
     </div>
    )
 }

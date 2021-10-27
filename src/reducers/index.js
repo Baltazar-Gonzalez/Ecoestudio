@@ -6,10 +6,17 @@ const reducer = (state, action) =>{
             return{
                 ...state,
                 carrito: [...state.carrito,action.payload]
-            }
-        }else{
+            }     
+        }
+        if(state.carrito.filter(items => items.id===0)){
             return{
-                ...state
+                ...state,
+                carrito:state.carrito.map(items => items.id===action.payload.id ? {...items, semilla:action.payload.semilla}:items)
+        }}
+        else{
+            return{
+                ...state,
+                carrito:[...state.carrito]
             }
         }
        case "DELETE_CART":

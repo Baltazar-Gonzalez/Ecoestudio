@@ -36,12 +36,14 @@ const Div = styled.div`
     top:0;
     padding: 100px 20px;
     width: 100%;
-    height: 100.1vh;
+    height: 100vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     background-color: #1b1b1b;
     color: #fff; 
+  overflow: auto;
     transition: all 0.7s ease;
+
 h4{
     width: 100vh;
 } 
@@ -78,11 +80,34 @@ li{
     color: white;
 }
 }
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
 .open{
     left:0;
 }
 .open2{
     right:0;
+}
+@media screen and (min-width: 1024px){
+ul{
+    text-align: center;
+    align-items: center;
+    overflow: auto;
+}
+li{
+    margin: 15px;
+}
+#socialmedia{
+    right: 45.5%;
+}
+h4{
+    text-align: center;
+    margin: 0 auto;
+}
+h6{
+    text-align: start;
+}
 }
 `
 const Menu = styled.div`
@@ -93,7 +118,7 @@ const Menu = styled.div`
   z-index: 20;
   transition: all .5s ease-in-out;
 ::before,::after{
-  content: '';
+  content: "";
   position: absolute;
   width: 25px;
   height: 3px;
@@ -115,6 +140,7 @@ const Img = styled.div`
     font-family: 'Montserrat', sans-serif;
 `
 const CartProduct = styled.li`
+  max-width: 750px;
   position: relative;
   display: flex;
   background-color: #fff;
@@ -123,12 +149,23 @@ const CartProduct = styled.li`
   font-size: .5em;
   img{
       width: 50%;
-      height: 120px;
+      height: 150px;
       object-fit: contain;
   }
   div{
     padding: 10px 0 0 0;
     font-size: .9em;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+@media screen and (min-width: 1024px){
+    width: 500px;
+    >div{
+        margin: 0 auto;
+    }
   } 
 `
 const Button = styled.button`
@@ -141,14 +178,17 @@ const Button = styled.button`
     padding: 0.3em 1em;
 `
 const Buy = styled.div`
+    background-color: #111;
+    height: 120px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     display: flex;
     flex-direction: column;
     font-family: 'Times New Roman', Times, serif;
     padding: 10px;
+    transition: all 0.7s ease;
     div{
         font-size:.7em;
         display: flex;
@@ -162,6 +202,8 @@ const Buy = styled.div`
         border:none;
         border-radius: 5px;
     }
+@media screen and (min-width: 1024px){
+    }    
 `
 
 const Header = () => {
@@ -175,6 +217,9 @@ const scrollWithOffset = (el) => {
 const handleClose = () => {
     if(document.getElementById("menu2").classList.contains("open2")){
         document.getElementById("menu2").classList.remove("open2")
+        if(!!document.getElementById("menu3")){
+            document.getElementById("menu3").classList.toggle("open2")
+        }
     }
     else{
     document.getElementById("menu").classList.toggle("open")
@@ -185,6 +230,9 @@ const handleClose = () => {
 const handleClose2 = () => {
     document.getElementById("icon").classList.toggle("x")
     document.getElementById("menu2").classList.toggle("open2")
+    if(!!document.getElementById("menu3")){
+    document.getElementById("menu3").classList.toggle("open2")
+}
 }
 
 const state = useSelector(state => state)
@@ -225,7 +273,7 @@ const handleRemove = e => {
                       <CartProduct>
                           <img alt={compras.name} src={compras.img}/>
                           <div>
-                            <span>{compras.nombre} ({compras.cantidad})</span>
+                            <span>{`${compras.nombre} ${compras.id===0? " - " + compras.semilla:""}`} ({compras.cantidad})</span>
                             <br/>
                             <span>${compras.precio}</span>
                             <QuantityButton quantity={compras.cantidad} id={compras.id}/>
@@ -235,7 +283,7 @@ const handleRemove = e => {
                     )
                 })}
                 {state.carrito.length>0?
-                <Buy>
+                <Buy className="menu2" id="menu3">
                     <div>
                         <p>Total</p>
                         <span>${total}</span>

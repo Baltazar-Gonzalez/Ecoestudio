@@ -4,6 +4,7 @@ import Modal from "./Modal"
 import styled from 'styled-components'
 
 const Div = styled.div`
+    width: 100%;
     height: 200px;
     display: flex;
     align-items: center;
@@ -12,8 +13,16 @@ const Div = styled.div`
     color: #eee;
 img{
     width: 45%;
+    max-width: 230px;
     height: 60%;
     padding: 12px;
+}
+
+@media screen and (min-width: 800px){
+    border: 1px solid #444;
+    flex-direction: column;
+    width: 250px;
+    text-align: center;
 }
 `
 

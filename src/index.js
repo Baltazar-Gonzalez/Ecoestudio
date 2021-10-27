@@ -11,9 +11,9 @@ const initialState = {
   "carousel":[
     {
       "id": 0,
-      "titulo": "Lapiz ecologico",
+      "titulo": "Lapices ecologico",
       "boton": "VER PRODUCTOS",
-      "img":"./images/lapices.jpg",
+      "img":"./images/lapices2.jpeg",
     }, 
     {
       "id": 1,
@@ -23,9 +23,9 @@ const initialState = {
     },
     {
       "id": 2,
-      "titulo": "NOSOTROS",
+      "titulo": "Nosotros",
       "boton": "INFO",
-      "img":"./images/nosotros.jpeg",
+      "img":"./images/empresa-ecologica.jpg",
     }
   ],
   "productos":[
@@ -33,9 +33,10 @@ const initialState = {
       "id": 0,
       "cantidad": 1,
       "nombre": "Lapiz ecologico",
-      "precio": 100,
+      "semilla":"",
+      "precio": 30,
       "descripcion": "Lapiz hecho con papel de diario reciclado, cuenta con una capsula biodegradable que contiene semillas (Perejil, Puerro, Albaca y Rucula) que te permitira seguir aportando al cuidado del medioambiente.",
-      "img":"./images/unnamed.jpg",
+      "img":"./images/lapices.jpeg",
     },
     {
       "id": 1,
@@ -43,15 +44,23 @@ const initialState = {
       "nombre": "Libreta ecologica",
       "precio": 250,
       "descripcion": "Libreta realizada con productos ecologicos. Posee una cantidad de ... hojas recicladas y una tapa forrada cuidadosamente con nuestro logo",
-      "img":"./images/posticks.jpg",
+      "img":"./images/libretas.jpeg",
     },
     {
       "id": 2,
       "cantidad": 1,
       "nombre": "Separadores",
-      "precio": 250,
-      "descripcion": "Señalador realizado con cartones reciclados y papel de libros. Poseen diseños unicos que son 100% desgradables",
+      "precio": 15,
+      "descripcion": "Separadores realizado con cartones reciclados y papel de libros. Son 100% biodegradables y cada uno cuenta con un diseño unico.",
       "img":"./images/separadores.jpeg",
+    },
+    {
+      "id": 3,
+      "cantidad": 1,
+      "nombre": "KIT ECOESTUDIO",
+      "precio": 280,
+      "descripcion": "Kit con todos los productos de ecoestudio. Con la compra de un lapiz ecologico y una libreta te regalamos un separador con diseño unico.",
+      "img":"./images/ofertas.jpeg",
     },
   ],
 }

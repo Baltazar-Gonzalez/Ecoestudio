@@ -19,6 +19,7 @@ const List = styled.ul`
     }
     li{
         margin: 10px 0;
+        overflow: auto;
     }
     h4{
         border-top:  1px solid rgb(225,225,225);
@@ -26,6 +27,8 @@ const List = styled.ul`
     }
     p{
         font-family: 'Times New Roman', Times, serif;
+    }
+    img{
     }
 `
  
@@ -64,7 +67,7 @@ const Info = () => {
                  <li id="personal">
                     <h4>PERSONAL</h4>
                     <p>Nuestro equipo esta compuesto por los alumnos de 5°A, nuestra jerarquia esta explicada en el siguiente organigrama. </p>
-                    <img alt="organigrama" src=""/>
+                    <img alt="organigrama" src="./images/organigrama.jpeg"/>
                  </li>
            </List>
            <List id="contactos">

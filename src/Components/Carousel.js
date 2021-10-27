@@ -20,7 +20,7 @@ img{
     top: 75px;
     text-align: center;
 h1{
-    font-size: 2.5em;
+    font-size: 3em;
     color: white;
     font-weight: 500;
 }
@@ -33,6 +33,13 @@ button{
     outline: none;
 }
 }
+@media screen and (min-width: 1024px){
+    img{
+        height: 320px;
+    }
+.Carousel__content{
+    top: 100px;
+}    
 `
 
 const DemoCarousel = () =>{
@@ -46,11 +53,10 @@ const state = useSelector(state => state.carousel)
                        <img alt={seccion.id} src={seccion.img}/>
                        <div className="Carousel__content">
                           <h1>{seccion.titulo}</h1>
-                          <button>{seccion.boton}</button>
                         </div>
-                     </div>   
-                    )
-                })}
+                        </div>   
+                        )
+                    })}
             </Carousel>
           </Div>
         );
