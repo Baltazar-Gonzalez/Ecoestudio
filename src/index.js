@@ -50,7 +50,7 @@ const initialState = {
       "id": 2,
       "cantidad": 1,
       "nombre": "Separadores",
-      "precio": 15,
+      "precio": 20,
       "descripcion": "Separadores realizado con cartones reciclados y papel de libros. Son 100% biodegradables y cada uno cuenta con un diseño unico.",
       "img":"./images/separadores.jpeg",
     },
