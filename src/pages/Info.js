@@ -43,7 +43,7 @@ const Info = () => {
                  </li>
                  <li id="envios">
                     <h4>ENVIOS</h4>
-                    <p>Nuestro rango de envios abarca la totalidad del Colegio José Manuel Estrada.</p>
+                    <p>Nuestro rango de envios abarca la totalidad del Colegio.</p>
                  </li>
                  <li id="pagos">
                     <h4>METODOS DE PAGO</h4>
@@ -54,7 +54,7 @@ const Info = () => {
                 <h2>EMPRESA</h2> 
                 <li id="nosotros">
                     <h4>NOSOTROS</h4>
-                    <p>Somos una empresa que se dedica a la venta de productos de librería amigables con el medio ambiente con el fin de reducir, reciclar y reutilizar cumpliendo con las leyes basicas para la conservación del medio ambiente. Nuestro proyecto surgió a traves del proyecto empresa en el aula, somos de 5°A del colegio José Manuel Estrada y creemos que el reciclaje es necesario en este mundo que está tan insdustrializado para reducir la contaminación.</p>
+                    <p>Somos una empresa que se dedica a la venta de productos de librería amigables con el medio ambiente con el fin de reducir, reciclar y reutilizar cumpliendo con las leyes basicas para la conservación del medio ambiente. Nuestro proyecto surgió a traves del proyecto empresa en el aula, somos de 5°A y creemos que el reciclaje es necesario en este mundo que está tan insdustrializado para reducir la contaminación.</p>
                  </li>
                  <li id="metas">
                     <h4>METAS</h4>
@@ -80,11 +80,11 @@ const Info = () => {
                 </div>
                  <li id="whatsapp">
                     <h4>WHATSAPP</h4>
-                    <p>+54 9 11 5111-7261</p>
+                    <p>+54 9 11 1234-5678</p>
                  </li>
                  <li id="direccion">
                     <h4>DIRECCIÓN</h4>
-                    <p>Buenos Aires, Ituzaingó, 24 de Octubre 569</p>
+                    <p>Buenos Aires, example, 123</p>
                  </li>
            </List>
        </Div>

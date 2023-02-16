@@ -10,12 +10,12 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  height: 250px;
+  height: 350px;
   color: #fff;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   padding: 30px 20px;
-  font-size: 1em;
+  font-size: 2em;
   background-image: url("./images/Nature-picture.jpg");
   background-size: 225%;
   background-position: -50vh;
@@ -28,11 +28,12 @@ const Div = styled.div`
   span{
       color: #06ff36;
   }
-`
+  `
 const Productos = styled.div`
     h1{
+        font-size: 3em;
         color: #fff;
-        padding: 40px;
+        padding: 40px 0;
         text-align: center;
         border-bottom: 1px solid #fff;
         border-top: 1px solid #fff;
@@ -45,10 +46,13 @@ const Productos = styled.div`
         align-items: center;
         flex-direction:row;
         flex-wrap: wrap;
-        padding: 0 0 20px 0 ;
+        padding: 20px 0 ;
      }
      h1{
          border: none;
+     }
+     .oferta{
+        padding-bottom: 100px ;
      }
     }
 `
@@ -74,7 +78,7 @@ return(
                     })}
             </div>
             <h1>OFERTAS</h1>
-            <div>
+            <div className="oferta">
                 <Product id={3}/>
             </div>
         </Productos>

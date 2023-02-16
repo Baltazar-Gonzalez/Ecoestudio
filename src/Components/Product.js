@@ -11,17 +11,21 @@ const Div = styled.div`
     background-color: #111;
     border-top: 1px solid #444;
     color: #eee;
+div{
+}
 img{
-    width: 45%;
-    max-width: 230px;
-    height: 60%;
+    width: 75%;
+    max-width: 250px;
+    height: 80%;
     padding: 12px;
 }
 
 @media screen and (min-width: 800px){
+    font-size: 1.5em;
     border: 1px solid #444;
     flex-direction: column;
-    width: 250px;
+    height: 400px;
+    width: 500px;
     text-align: center;
 }
 `
@@ -41,10 +45,10 @@ const Product = props => {
        <>
         <Div onClick={handleOpen}>
             <img alt={state.nombre} src={state.img}/>
-                <div >
-                    <h2>{state.nombre}</h2>
-                    <span>${state.precio}</span>
-                </div>
+            <div>
+                <h2>{state.nombre}</h2>
+                <span>${state.precio}</span>
+            </div>
         </Div>
         <Modal id={props.id} isOpen={isOpen} onClose={handleClose}/>
     </>

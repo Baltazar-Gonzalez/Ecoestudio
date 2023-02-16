@@ -7,12 +7,13 @@ const Div = styled.div`
     bottom: 0;
     left:0;
     width: 100%;
-    min-height: 20em;
+    min-height: 22em;
     background-color: #1b1b1b;
     color: #c4c4c4;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 1.5em;
 > ul{
     position: relative;
     display: block;

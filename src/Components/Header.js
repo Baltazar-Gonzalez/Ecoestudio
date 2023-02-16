@@ -14,13 +14,13 @@ const Div = styled.div`
   z-index: 100;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 75px;
   padding: 0 20px;
   background-color: #1b1b1b;
   cursor: pointer;
   transition: all .5s ease-in-out;
 .x{
-  transform: translateX(-50px);
+  transform: translateX(-60px);
 }
 .x::before{
     transform: rotate(45deg) translate(35px, -35px);
@@ -111,8 +111,8 @@ h6{
 }
 `
 const Menu = styled.div`
-  width: 25px;
-  height: 3px;
+  width: 35px;
+  height: 4px;
   background-color: #fff;
   border-radius: 5px;
   z-index: 20;
@@ -120,22 +120,23 @@ const Menu = styled.div`
 ::before,::after{
   content: "";
   position: absolute;
-  width: 25px;
-  height: 3px;
+  width: 35px;
+  height: 4px;
   z-index: 20;
   background-color: #fff;
   border-radius: 5px;
   transition: all .5s ease-in-out;
 }
 ::before{
-    transform: translateY(-7px);
+    transform: translateY(-9px);
 }
 ::after{
-    transform: translateY(7px);
+    transform: translateY(9px);
 }
 
 `
 const Img = styled.div`
+    font-size: 1.5em;
     color: white;
     font-family: 'Montserrat', sans-serif;
 `
@@ -259,12 +260,12 @@ const handleRemove = e => {
                     <li><NavHashLink scroll={el => scrollWithOffset(el)} onClick={handleClose} to="/info#contactos">Contactanos</NavHashLink></li>
                     <li>
                         <ul id="socialmedia">
-                        <li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/ecoestudio.ok/">INSTAGRAM</a></li>
+                        <li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/">INSTAGRAM</a></li>
                         </ul>
                     </li>
                 </ul>
                 <NavHashLink scroll={el => scrollWithOffset(el)} to="/#top"><Img>Ecoestudio</Img></NavHashLink>
-            <BiShoppingBag color="white" size="25px" onClick={handleClose2}/>
+            <BiShoppingBag color="white" size="35px" onClick={handleClose2}/>
             <ul className="menu2" id="menu2">
                 <h4>Carrito de Compras</h4>
                 <h6>Items({state.carrito.length})</h6>

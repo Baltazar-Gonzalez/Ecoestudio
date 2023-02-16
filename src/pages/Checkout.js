@@ -79,7 +79,7 @@ const Checkout = () => {
                 else productos += ` - ${`${items.nombre} ${items.id===0? "de " + items.semilla:""}`} (${items.cantidad})`
                 
             })
-            window.open(`https://api.whatsapp.com/send?phone=5491166434849&text=COMPRADOR: ${form.Nombre} ${form.Apellido}%0AGRADO: ${form.Grado} %0APEDIDO: ${productos} %0ATOTAL: $${total}`)
+            window.open(`https://api.whatsapp.com/send?&text=COMPRADOR: ${form.Nombre} ${form.Apellido}%0AGRADO: ${form.Grado} %0APEDIDO: ${productos} %0ATOTAL: $${total}`)
         }
     }
     const handleChange = (e, value) =>{

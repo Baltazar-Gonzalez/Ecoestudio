@@ -20,7 +20,7 @@ img{
     top: 75px;
     text-align: center;
 h1{
-    font-size: 3em;
+    font-size: 5em;
     color: white;
     font-weight: 500;
 }
@@ -35,10 +35,10 @@ button{
 }
 @media screen and (min-width: 1024px){
     img{
-        height: 320px;
+        height: 500px;
     }
 .Carousel__content{
-    top: 100px;
+    top: 160px;
 }    
 `
 
